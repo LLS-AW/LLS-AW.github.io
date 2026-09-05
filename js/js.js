@@ -1,14 +1,15 @@
-const correctHash = "27944707868173224164214102071131104031107304370430842014342011080";
+const correctHash = "3507f0107622741394834906314022304102512340272270302130711000504";
 let wrongCount = 0;
 
 async function sha256(str) {
     const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-    return Array.from(new Uint8Array(buf)).join("");
+    const hashArray = Array.from(new Uint8Array(buf));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join("");
 }
 
 async function checkPassword(inputText) {
     if (wrongCount >= 3) {
-        return { ok: false, msg: "东子" };
+        return { ok: false, msg: "已经输错3次，页面已锁定！刷新重置" };
     }
     const inputHash = await sha256(inputText);
     if (inputHash === correctHash) {
@@ -22,11 +23,9 @@ async function checkPassword(inputText) {
 async function doCheck() {
     const tipDom = document.getElementById("tip");
     const inputPwd = document.getElementById("pwd").value;
-
     const res = await checkPassword(inputPwd);
     tipDom.innerText = res.msg;
-
     if (res.ok) {
-        window.location.href = "https://lls-aw.github.io/download";
+        window.location.href = "download.html";
     }
 }
