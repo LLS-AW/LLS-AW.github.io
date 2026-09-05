@@ -1,0 +1,12 @@
+body{background-image: url(img/background.jpg);background-repeat: no-repeat;background-size: cover;background-position: center;padding-left: 172px;}
+a{display: inline-block;padding: 8px 20px;background:#00a3ee;color: white;text-decoration: none;border-radius: 5px;border: 2px solid #777;}
+a:hover{background-color: #0664f1;}
+.trans-box{background-color: rgba(255,255,255,0.35);padding: 12px 16px;border-radius: 10px;margin: 15px 0;border: 2px solid #777;}
+.title{background-color: rgba(44,44,44,0.35);padding: 12px 16px;border-radius: 10px;margin: 15px 0;}
+::-webkit-scrollbar{width: 8px;height: 8px;}
+::-webkit-scrollbar-track{background-color: rgba(255,255,255,0.15);border-radius: 4px;}
+::-webkit-scrollbar-thumb{background-color: rgba(255,255,255,0.6);border-radius: 4px;transition: background 0.2s;}
+::-webkit-scrollbar-thumb:hover{background-color: rgba(255,255,255,0.9);}
+.index{position: fixed;top:30px;left:20px;background-color: rgba(255,255,255,0.4);padding:16px;border: 1px solid rgba(255,255,255,0.5);transition: all 3ms;}
+.index h4{margin-top: 0;color: #222;}
+.index a{display: block;margin: 8px 0;background: transparent;color: #3357aa;padding: 6px 10px;border: 1px solid transparent;}
